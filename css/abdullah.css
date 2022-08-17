@@ -454,7 +454,7 @@ a {
   border: 1px solid #ccc;
 }
 .features .box:hover .image::after {
-  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  background-image: linear-gradient(to left bottom, transparent 50%, white 50%);
 }
 .features .box .image {
   position: relative;
@@ -487,10 +487,9 @@ a {
   left: 0;
   width: calc(100% + 0.5px);
   height: 140px;
-  background-color: #fff;
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  background-image: linear-gradient(to right bottom, transparent 50%, white 50%);
   z-index: 2;
-  transition: var(--main-transition);
+  transition: var(--main-transition)
 }
 .features .box .info {
   padding: 0 20px;
