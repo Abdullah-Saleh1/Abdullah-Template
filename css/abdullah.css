@@ -1535,7 +1535,6 @@ a {
   background-color: #191919; 
   color: #fff; 
   padding: 70px 0 50px;
-  margin-top: 130px;
   position: relative;
 }
 .footer .waves {
@@ -1737,22 +1736,6 @@ a {
   }
   50% {
   background-image: url(../images/discount-background2.jpg);
-  }
-}
-@keyframes wave_01 {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-position-x: 0;
-  }
-}
-@keyframes wave_02 {
-  0% {
-    background-position-x: 0;
-  }
-  100% {
-    background-position-x: 1000px;
   }
 }
 /* End Animation */
