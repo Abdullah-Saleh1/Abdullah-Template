@@ -48,6 +48,9 @@ a {
     width: 1170px;
   }
 }
+.page {
+  overflow-x: hidden; 
+}
 /* End Global Rules */
 /* Start Component */
 .main-title {
@@ -113,7 +116,7 @@ a {
   color: var(--main-color);
   height: 72px;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -325,10 +328,47 @@ a {
     text-align: center;
   }
 }
+:root {
+  --type-writer-characters: 26;
+  --type-writer-speed: 3s;
+  --type-writer-delay: 1s;
+}
+.landing .container .info :where(h1, p) {
+  text-shadow: 2px 2px 0 rgb(0 0 0 / .1); 
+}
 .landing .container .info h1 {
   font-size: 40px;
-  margin: 0;
-  letter-spacing: -2px;
+  position: relative;
+  white-space: nowrap; 
+}
+.landing .container .info h1::before,
+.landing .container .info h1::after {
+  content: '';
+  position: absolute; 
+}
+.landing .container .info h1::before {
+  inset: 0;
+  background-color: #eee;
+  animation: type-writer var(--type-writer-speed) ease-in-out var(--type-writer-delay) forwards; 
+}
+.landing .container div.info h1::after {
+  width: 3px; 
+  height: 100%; 
+  background-color: transparent; 
+  left: 0; 
+  animation:
+   type-writer var(--type-writer-speed) ease-in-out var(--type-writer-delay) forwards, 
+   cursor 750m infinite; 
+}
+@keyframes cursor {
+  to {
+    color: #222;
+  }
+}
+@keyframes type-writer {
+  to {
+    inset: 0 0 0 100%; 
+  }
 }
 @media (max-width: 767px) {
   .landing .container .info h1 {
@@ -341,6 +381,15 @@ a {
   line-height: 1.7;
   margin: 5px 0 0;
   max-width: 500px;
+  opacity: 0; 
+  transform: translateY(20px);
+  animation: go-up 1s ease-in-out calc(var(--type-writer-speed) + var(--type-writer-delay)) forwards; 
+}
+@keyframes go-up {
+  to {
+    opacity: 1; 
+    transform: translateY(10px);
+  }
 }
 @media (max-width: 767px) {
   .landing .container .info p {
@@ -361,7 +410,7 @@ a {
   }
 }
 .landing .image img {
-  width: 600px;
+  width: 450px;
   animation: up-and-down 5s linear infinite;
 }
 .landing .go-down {
@@ -1306,6 +1355,11 @@ a {
 }
 .videos .container {
   display: flex;
+}
+@media (max-width: 767px) {
+  .videos .container {
+    flex-direction: column
+  }
 }
 .videos .box {
   border: 1px solid #ddd; 
