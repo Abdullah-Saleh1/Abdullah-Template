@@ -360,19 +360,9 @@ a {
    type-writer var(--type-writer-speed) ease-in-out var(--type-writer-delay) forwards, 
    cursor 750m infinite; 
 }
-@keyframes cursor {
-  to {
-    color: #222;
-  }
-}
-@keyframes type-writer {
-  to {
-    inset: 0 0 0 100%; 
-  }
-}
 @media (max-width: 767px) {
   .landing .container .info h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 .landing .container .info p {
@@ -385,12 +375,7 @@ a {
   transform: translateY(20px);
   animation: go-up 1s ease-in-out calc(var(--type-writer-speed) + var(--type-writer-delay)) forwards; 
 }
-@keyframes go-up {
-  to {
-    opacity: 1; 
-    transform: translateY(10px);
-  }
-}
+
 @media (max-width: 767px) {
   .landing .container .info p {
     font-size: 18px;
@@ -1790,6 +1775,22 @@ a {
   }
   50% {
   background-image: url(../images/discount-background2.jpg);
+  }
+}
+@keyframes cursor {
+  to {
+    color: #222;
+  }
+}
+@keyframes type-writer {
+  to {
+    inset: 0 0 0 100%; 
+  }
+}
+@keyframes go-up {
+  to {
+    opacity: 1; 
+    transform: translateY(10px);
   }
 }
 /* End Animation */
